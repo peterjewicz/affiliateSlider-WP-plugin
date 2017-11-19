@@ -13,6 +13,16 @@
  */
 ?>
 
+<?php
+       //Grab all options
+       $options = get_option($this->plugin_name);
+   ?>
+
+   <?php
+       settings_fields($this->plugin_name);
+       do_settings_sections($this->plugin_name);
+   ?>
+
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="wrap">
 
@@ -20,6 +30,21 @@
     <button class="addSlide">Add Slide</button>
 
     <form method="post" name="amazonslider_options" id="amazonsliderForm" action="options.php">
+        <?php settings_fields($this->plugin_name); ?>
+
+        <?php
+            $looperVar = 0;
+            foreach($options as $option){ ?>
+                <div class="fieldset">
+           			<label for="url">Image Url</label></br>
+           			<input type="text" name="affiliateSliderUrl-<?=$looperVar?>" value="<?=$option[0]?>"/></br>
+           			<label for="link">Image Link</label></br>
+           			<input type="text" name="affiliateSliderLink-<?=$looperVar?>" value="<?=$option[1]?>"/></br></br>
+       			</div>
+    <?php
+                $looperVar++;
+            }
+        ?>
 
         <?php submit_button('Save all changes', 'primary','submit', TRUE); ?>
 

@@ -74,4 +74,5 @@ function run_amazonslider() {
 	$plugin->run();
 
 }
+
 run_amazonslider();

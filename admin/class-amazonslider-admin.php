@@ -151,4 +151,43 @@ class Amazonslider_Admin {
 	    include_once( 'partials/amazonslider-admin-display.php' );
 	}
 
+
+
+
+	/**
+	*
+	* Handles saving the input
+	*
+	**/
+	 public function options_update() {
+	    register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+	 }
+
+
+	/**
+	*
+	*  Validates plugin values
+	*
+	**/
+	public function validate($input) {
+	    $valid = array();
+		$moreInputs = true;
+		$inputLooper = 0;
+
+		while($moreInputs){
+			if(isset($_POST['affiliateSliderUrl-' . $inputLooper])){
+				$valid[$inputLooper] = array();
+				$valid[$inputLooper][0] = $_POST['affiliateSliderUrl-' . $inputLooper];
+				$valid[$inputLooper][1] = $_POST['affiliateSliderLink-' . $inputLooper];
+			}
+			else{
+				$moreInputs = false;
+			}
+			$inputLooper++;
+		}
+
+
+	    return $valid;
+	 }
+
 }

@@ -48,12 +48,13 @@ class Amazonslider_Public {
 	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
-
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+        $this->version = $version;
+        $this->wp_cbf_options = get_option($this->plugin_name);
+		// add_shortcode('test', 'initSlider');
+		// $this->loader->add_shortcode( 'test', $plugin_public, 'initSlider' );
 
 	}
-
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
@@ -97,7 +98,10 @@ class Amazonslider_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/amazonslider-public.js', array( 'jquery' ), $this->version, false );
+	}
 
+	public function initSlider() {
+		echo('<h1>petersss</h1>');
 	}
 
 }

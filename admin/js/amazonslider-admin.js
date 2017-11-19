@@ -29,15 +29,18 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 	 $( window ).load(function() {
-		 var itemHtml = '<div class="fieldset">'
-		 +'<label for="url">Image Url</label></br>'
-		 +'<input type="text" name="url" /></br>'
-		 +'<label for="link">Image Link</label></br>'
-		 +'<input type="text" name="link" /></br></br>'
-		 +'</div>';
+		 var inputCount = 0;
+
 
 		 $('.addSlide').click(function(){
+			 var itemHtml = '<div class="fieldset">'
+			 +'<label for="url">Image Url</label></br>'
+			 +'<input type="text" name="affiliateSliderUrl-'+inputCount+'" /></br>'
+			 +'<label for="link">Image Link</label></br>'
+			 +'<input type="text" name="affiliateSliderLink-'+inputCount+'" /></br></br>'
+			 +'</div>';
 			 $('#amazonsliderForm').append(itemHtml);
+			 inputCount++;
 		 });
 
 
