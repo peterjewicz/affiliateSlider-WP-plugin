@@ -37,7 +37,7 @@
             foreach($options as $option){ ?>
                 <div class="fieldset">
            			<label for="url">Image Url</label></br>
-           			<input type="text" name="affiliateSliderUrl-<?=$looperVar?>" value="<?=$option[0]?>"/></br>
+           			<input class="affiliateSliderInput" type="text" name="affiliateSliderUrl-<?=$looperVar?>" value="<?=$option[0]?>"/></br>
            			<label for="link">Image Link</label></br>
            			<input type="text" name="affiliateSliderLink-<?=$looperVar?>" value="<?=$option[1]?>"/></br></br>
        			</div>

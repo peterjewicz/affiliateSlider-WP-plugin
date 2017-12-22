@@ -29,4 +29,14 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+$(document).ready(function(){
+	$('.affiliateSlider').slick({
+	 infinite: true,
+	 slidesToShow: 4,
+	 slidesToScroll: 1
+   });
+});
+
+
+
 })( jQuery );

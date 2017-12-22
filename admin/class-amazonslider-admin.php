@@ -186,7 +186,6 @@ class Amazonslider_Admin {
 			$inputLooper++;
 		}
 
-
 	    return $valid;
 	 }
 

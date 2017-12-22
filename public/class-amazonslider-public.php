@@ -73,7 +73,8 @@ class Amazonslider_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_style( $this->plugin_name .'-slick', plugin_dir_url( __FILE__ ) . 'css/slick.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name .'-slickTheme', plugin_dir_url( __FILE__ ) . 'css/slick-theme.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/amazonslider-public.css', array(), $this->version, 'all' );
 
 	}
@@ -96,12 +97,25 @@ class Amazonslider_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_script( $this->plugin_name . '-slick', plugin_dir_url( __FILE__ ) . 'js/slick.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/amazonslider-public.js', array( 'jquery' ), $this->version, false );
+
 	}
 
+	//TODO change this so it's not absolute garbage
 	public function initSlider() {
-		echo('<h1>petersss</h1>');
+		$options = get_option($this->plugin_name);
+
+		echo('<div class="affiliateSlider">');
+			foreach($options as $option){
+
+				echo('<a href="'.$option[1].'">');
+					echo('<div class="slide">');
+						echo('<img src="'.$option[0].'" />');
+					echo('</div>');
+				echo('</a>');
+			}
+		echo('</div>');
 	}
 
 }
