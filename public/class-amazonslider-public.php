@@ -105,17 +105,30 @@ class Amazonslider_Public {
 	//TODO change this so it's not absolute garbage
 	public function initSlider() {
 		$options = get_option($this->plugin_name);
+		$returnVal = "";
 
-		echo('<div class="affiliateSlider">');
+		// echo('<div class="affiliateSlider">');
+		// 	foreach($options as $option){
+        //
+		// 		echo('<a href="'.$option[1].'">');
+		// 			echo('<div class="slide">');
+		// 				echo('<img src="'.$option[0].'" />');
+		// 			echo('</div>');
+		// 		echo('</a>');
+		// 	}
+		// echo('</div>');
+		$returnVal .= '<div class="affiliateSlider">';
 			foreach($options as $option){
 
-				echo('<a href="'.$option[1].'">');
-					echo('<div class="slide">');
-						echo('<img src="'.$option[0].'" />');
-					echo('</div>');
-				echo('</a>');
+				$returnVal .= '<a href="'.$option[1].'">';
+					$returnVal .= '<div class="slide">';
+						$returnVal .= '<img src="'.$option[0].'" />';
+					$returnVal .= '</div>';
+				$returnVal .='</a>';
 			}
-		echo('</div>');
+		$returnVal .='</div>';
+
+		return $returnVal;
 	}
 
 }
