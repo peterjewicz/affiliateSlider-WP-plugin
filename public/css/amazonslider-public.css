@@ -4,7 +4,8 @@
  */
 
  .affiliateSlider{
-     width: 100%;
+     width: 95%;
+     margin: 0 auto;
      /* overflow-x:hidden; */
  }
  .affiliateSlider img{
@@ -16,6 +17,7 @@
  .slide{
      position:relative;
  }
+
 
 
  .slideText{
