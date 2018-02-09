@@ -39,7 +39,9 @@
            			<label for="url">Image Url</label></br>
            			<input class="affiliateSliderInput" type="text" name="affiliateSliderUrl-<?=$looperVar?>" value="<?=$option[0]?>"/></br>
            			<label for="link">Image Link</label></br>
-           			<input type="text" name="affiliateSliderLink-<?=$looperVar?>" value="<?=$option[1]?>"/></br></br>
+           			<input type="text" name="affiliateSliderLink-<?=$looperVar?>" value="<?=$option[1]?>"/></br>
+                    <label for="affiliateSliderText">Text</label></br>
+                    <input type="text" name="affiliateSliderText-<?=$looperVar?>" value="<?=$option[2]?>"/></br></br></br>
        			</div>
     <?php
                 $looperVar++;

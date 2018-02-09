@@ -179,6 +179,7 @@ class Amazonslider_Admin {
 				$valid[$inputLooper] = array();
 				$valid[$inputLooper][0] = $_POST['affiliateSliderUrl-' . $inputLooper];
 				$valid[$inputLooper][1] = $_POST['affiliateSliderLink-' . $inputLooper];
+				$valid[$inputLooper][2] = $_POST['affiliateSliderText-' . $inputLooper];
 			}
 			else{
 				$moreInputs = false;

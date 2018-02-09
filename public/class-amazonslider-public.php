@@ -123,6 +123,7 @@ class Amazonslider_Public {
 				$returnVal .= '<a href="'.$option[1].'">';
 					$returnVal .= '<div class="slide">';
 						$returnVal .= '<img src="'.$option[0].'" />';
+						$returnVal .= '<div class="slideText">'.$option[2].'</div>';
 					$returnVal .= '</div>';
 				$returnVal .='</a>';
 			}
